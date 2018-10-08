@@ -10,11 +10,12 @@ Personal home automation system
 ## Systems
 
 * Tradfri
-  * Lights/groups
+  * Lights/groups - on/off/brightness/color
   * Motion sensor
 * TV - WebOS
-* Netatmo Weather station
-* Broadlink Mini 3
-* Thermostat (TBD)
-* Window blinds (TBD)
-* Intercom (TBD)
+  * notifications, volume, on/off, ...
+* Netatmo Weather station - get current weather conditions
+* Broadlink Mini 3 - A/C control
+* Thermostat (TBD) - set temperature
+* Window blinds (TBD) - open/close
+* Intercom (TBD) - notification, video stream?
