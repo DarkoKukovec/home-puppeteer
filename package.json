@@ -1,0 +1,17 @@
+{
+  "name": "home-puppeteer",
+  "version": "1.0.0",
+  "repository": "git@github.com:DarkoKukovec/home-puppeteer.git",
+  "author": "Darko Kukovec <darko@kukovec.eu>",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node server/index.ts"
+  },
+  "dependencies": {
+    "datx": "^0.13.1",
+    "express": "^4.16.3",
+    "mobx": "^5.5.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
+  }
+}
