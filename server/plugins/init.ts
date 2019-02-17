@@ -10,4 +10,4 @@ Object.keys(ROOMS).forEach((id) => {
   state.add({id, ...ROOMS[id]}, Room);
 })
 
-console.log(state.snapshot);
+// console.log(state.snapshot);
