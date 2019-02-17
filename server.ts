@@ -3,17 +3,30 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { HOST, PORT } from './config';
 
+import './server/plugins/init';
+import state from './server/state';
+import { Item, Room } from './server/state/models';
+
 const app = express();
 
 const indexPath = path.join(__dirname, 'client', 'dist', 'index.html');
 
+app.use(express.static(path.join(__dirname, 'static')));
+
 if (process.env.NODE_ENV !== 'development') {
-  app.use(express.static('client/dist'));
-  app.get('*', (req, res) => {
+  app.use(express.static('./client/dist'));
+  app.get('*', (_req, res) => {
     res.set('Content-Type', 'text/html');
     fs.createReadStream(indexPath).pipe(res);
   });
 }
+
+app.get('/api/rooms', (_req, res) => {
+  res.send(state.findAll(Room).map((room) => room.meta.snapshot));
+});
+app.get('/api/items', (_req, res) => {
+  res.send(state.findAll(Item).map((item) => item.meta.snapshot));
+});
 
 app.listen(PORT, HOST, () => {
   console.log(`Listening on ${HOST}:${PORT}...`);

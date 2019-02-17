@@ -1,0 +1,178 @@
+{
+  "rooms": [
+    {
+      "id": "living",
+      "name": "Living room"
+    }, {
+      "id": "kitchen",
+      "name": "Kitchen"
+    }, {
+      "id": "bedroom",
+      "name": "Bedroom"
+    }, {
+      "id": "outside",
+      "name": "Outside"
+    }, {
+      "id": "hall",
+      "name": "Hall"
+    }, {
+      "id": "bathroom",
+      "name": "Bathroom"
+    }, {
+      "id": "dining",
+      "name": "Dining room"
+    }
+  ],
+  "pois": [
+    {
+      "coordinates": {
+        "x": 0.55,
+        "y": 0.72
+      },
+      "name": "Thermostat",
+      "room": "living"
+    }, {
+      "coordinates": {
+        "x": 0.06,
+        "y": 0.58
+      },
+      "name": "Weather",
+      "room": "bedroom"
+    }, {
+      "coordinates": {
+        "x": 0.94,
+        "y": 0.88
+      },
+      "name": "Weather",
+      "room": "kitchen"
+    }, {
+      "coordinates": {
+        "x": 0.79,
+        "y": 0.83
+      },
+      "name": "Lights",
+      "room": "kitchen"
+    }, {
+      "coordinates": {
+        "x": 0.85,
+        "y": 0.69
+      },
+      "name": "Lights",
+      "room": "dining"
+    }, {
+      "coordinates": {
+        "x": 0.50,
+        "y": 0.86
+      },
+      "name": "Lights",
+      "room": "hall"
+    }, {
+      "coordinates": {
+        "x": 0.22,
+        "y": 0.44
+      },
+      "name": "Lights",
+      "room": "bedroom"
+    }, {
+      "coordinates": {
+        "x": 0.63,
+        "y": 0.39
+      },
+      "name": "Lights",
+      "room": "living"
+    }, {
+      "coordinates": {
+        "x": 0.405,
+        "y": 0.69
+      },
+      "name": "AC",
+      "room": "living"
+    }, {
+      "coordinates": {
+        "x": 0.94,
+        "y": 0.44
+      },
+      "name": "TV",
+      "room": "living"
+    }, {
+      "coordinates": {
+        "x": 0.58,
+        "y": 0.965
+      },
+      "name": "Intercom",
+      "room": "hall",
+      "disabled": true
+    }, {
+      "coordinates": {
+        "x": 0.23,
+        "y": 0.85
+      },
+      "name": "Lights",
+      "room": "bathroom",
+      "disabled": true
+    }, {
+      "coordinates": {
+        "x": 0.41,
+        "y": 0.88
+      },
+      "name": "Heating",
+      "room": "bathroom",
+      "disabled": true
+    }, {
+      "coordinates": {
+        "x": 0.20,
+        "y": 0.96
+      },
+      "name": "Wall lights",
+      "room": "bathroom",
+      "disabled": true
+    }, {
+      "coordinates": {
+        "x": 0.87,
+        "y": 0.24
+      },
+      "name": "Blinds",
+      "room": "living",
+      "disabled": true
+    }, {
+      "coordinates": {
+        "x": 0.10,
+        "y": 0.17
+      },
+      "name": "Blinds",
+      "room": "bedroom",
+      "disabled": true
+    }, {
+      "coordinates": {
+        "x": 0.25,
+        "y": 0.06
+      },
+      "name": "Lights 2",
+      "room": "outside",
+      "disabled": true
+    }, {
+      "coordinates": {
+        "x": 0.69,
+        "y": 0.09
+      },
+      "name": "Lights 1",
+      "room": "outside",
+      "disabled": true
+    }, {
+      "coordinates": {
+        "x": 0.60,
+        "y": 0.15
+      },
+      "name": "Weather",
+      "room": "outside"
+    }, {
+      "coordinates": {
+        "x": 0.44,
+        "y": 0.29
+      },
+      "name": "Roomba",
+      "room": "living",
+      "disabled": true
+    }
+  ]
+}
