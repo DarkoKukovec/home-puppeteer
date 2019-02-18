@@ -4,6 +4,14 @@ import { Room } from './Room';
 export class Item extends Model {
   public static type = 'item';
 
+  public static preprocess(data: any) {
+    console.log('item', data);
+
+    return {
+      ...data,
+    };
+  }
+
   @prop
   public coordinates!: {
     x: number;

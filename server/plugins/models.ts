@@ -7,3 +7,7 @@ export default [
   Netatmo,
   NetatmoItem,
 ];
+
+export const itemTypes = [
+  NetatmoItem.type,
+];

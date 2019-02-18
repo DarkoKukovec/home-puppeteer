@@ -17,6 +17,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.2",
+    "socket.io-client": "^2.2.0",
     "typescript": "3.2.2"
   },
   "scripts": {
@@ -29,7 +30,7 @@
     "build-storybook": "build-storybook -s public"
   },
   "browserslist": [
-    "not chrome <= 72"
+    "chrome >= 72"
   ],
   "devDependencies": {
     "@infinumjs/tslint-config-react": "^2.0.0-beta.6",
@@ -40,11 +41,13 @@
     "@storybook/addon-viewport": "^4.1.4",
     "@storybook/addons": "^4.1.4",
     "@storybook/react": "^4.1.4",
+    "@types/socket.io": "^2.1.2",
+    "@types/socket.io-client": "^1.4.32",
     "@types/storybook__addon-options": "^4.0.0",
     "@types/storybook__react": "^4.0.0",
     "babel-loader": "^8.0.4",
+    "http-proxy-middleware": "^0.19.1",
     "ts-loader": "^5.3.2",
     "tslint": "^5.12.0"
-  },
-  "proxy": "http://localhost:3100/"
+  }
 }

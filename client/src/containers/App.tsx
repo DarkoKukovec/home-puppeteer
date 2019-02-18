@@ -7,8 +7,8 @@ import { Map } from '../components/Map';
 import state from '../state';
 import { Item } from '../state/models';
 
-fetch('/api/rooms').then((res) => res.json()).then(state.insert.bind(state));
-fetch('/api/items').then((res) => res.json()).then(state.insert.bind(state));
+// fetch('/api/rooms').then((res) => res.json()).then(state.insert.bind(state));
+// fetch('/api/items').then((res) => res.json()).then(state.insert.bind(state));
 
 // @ts-ignore
 window.debug = { state };

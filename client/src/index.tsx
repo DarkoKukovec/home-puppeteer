@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 
 import { App } from './containers/App';
 import './index.css';
@@ -11,3 +11,13 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+import io from 'socket.io-client';
+import state from './state';
+
+const socket = io({
+  transports: ['polling'],
+});
+
+socket.on('init', state.insert.bind(state));
+socket.on('patch', state.applyPatch.bind(state));
