@@ -5,7 +5,7 @@ import { Item } from './Item';
 export class Service extends Model {
   public static type = 'service';
 
-  @prop.toMany(Item)
+  // @prop.toMany(Item)
   public items!: Array<Item>;
 
   constructor(...args: Array<any>) {
@@ -13,3 +13,5 @@ export class Service extends Model {
     super['constructor'](...args);
   }
 }
+
+prop.toMany(Item)(Service, 'items');

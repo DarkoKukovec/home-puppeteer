@@ -3,7 +3,7 @@ import { Model, prop } from 'datx';
 export class Room extends Model {
   public static type = 'room';
 
-  @prop
+  // @prop
   public name!: string;
 
   constructor(...args: Array<any>) {
@@ -11,3 +11,5 @@ export class Room extends Model {
     super['constructor'](...args);
   }
 }
+
+prop(Room, 'name');

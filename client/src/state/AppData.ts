@@ -10,6 +10,10 @@ export class AppData extends Collection {
 
   @computed
   public get items(): Array<Item> {
-    return this.findAll(Item);
+    return this.filter((model) => model instanceof Item) as Array<Item>;
+  }
+
+  public findItem(id: string | number): Item | undefined {
+    return this.items.find((model) => model.meta.id === id);
   }
 }

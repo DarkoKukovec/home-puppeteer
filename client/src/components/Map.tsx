@@ -16,18 +16,6 @@ const mainClass = css`
     height: auto;
     transition: opacity .3s ease-in-out;
   }
-
-  @media (max-width: 800px) {
-    width: fit-content;
-    margin: 32px auto 0;
-    text-align: center;
-
-    svg {
-      width: auto;
-      max-width: 100%;
-      max-height: 500px;
-    }
-  }
 `;
 
 const selectedClass = css`

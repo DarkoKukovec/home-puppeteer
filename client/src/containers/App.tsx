@@ -4,6 +4,7 @@ import { observer } from 'mobx-react';
 import * as React from 'react';
 
 import { Map } from '../components/Map';
+import { PoiDetails } from '../components/PoiDetails';
 import state from '../state';
 import { Item } from '../state/models';
 
@@ -21,6 +22,9 @@ const mainClass = css`
 
 const mapClass = css`
   transform: perspective(300px) rotateX(5deg) scale(0.8) translateY(-100px);
+  max-width: 800px;
+  min-width: 400px;
+  flex: 3;
 `;
 
 const titleClass = css`
@@ -35,18 +39,41 @@ const titleClass = css`
   }
 `;
 
+const containerClass = css`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const sidebarClass = css`
+  flex: 1;
+  min-width: 400px;
+  padding-top: 20px;
+  padding-right: 20px;
+`;
+
 @observer
-export class App extends React.Component {
+export class App extends React.Component<{
+  history: {
+    push(url: string): void;
+  };
+  location: {
+    pathname: string;
+  };
+}> {
   public componentState: {
     selectedPoi?: string | number;
   } = observable({
     selectedPoi: undefined,
   });
 
+  private get selectedPoiId() {
+    return this.props.location.pathname.slice(1);
+  }
+
   @computed
   private get selectedPoi() {
-    return this.componentState.selectedPoi
-      ? state.find(Item, this.componentState.selectedPoi) || undefined
+    return this.selectedPoiId
+      ? state.findItem(this.selectedPoiId)
       : undefined;
   }
 
@@ -64,14 +91,17 @@ export class App extends React.Component {
             </React.Fragment>
           }
         </h1>
-        <Map
-          className={cx(mapClass, {
-            // [tiltedClass]: Boolean(this.selectedPoi),
-          })}
-          items={state.items}
-          onClick={this.onPoiClick}
-          activePoi={this.selectedPoi}
-        />
+        <div className={containerClass}>
+          <Map
+            className={cx(mapClass, {
+              // [tiltedClass]: Boolean(this.selectedPoi),
+            })}
+            items={state.items}
+            onClick={this.onPoiClick}
+            activePoi={this.selectedPoi}
+          />
+          {this.selectedPoi && <PoiDetails className={sidebarClass} item={this.selectedPoi} />}
+        </div>
       </div>
     );
   }
@@ -80,8 +110,12 @@ export class App extends React.Component {
   private onPoiClick(selected?: Item) {
     return (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
       e.stopPropagation();
-      this.componentState.selectedPoi = (!selected || this.componentState.selectedPoi === selected.meta.id)
+      const id = (!selected || this.componentState.selectedPoi === selected.meta.id)
         ? undefined : selected.meta.id;
+
+      if (id !== undefined) {
+        this.props.history.push(`/${id}`);
+      }
     };
   }
 }
