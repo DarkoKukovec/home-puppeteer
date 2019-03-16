@@ -13,6 +13,7 @@ export class Item extends Model {
 
     return {
       ...data,
+      plugins: undefined,
     };
   }
 

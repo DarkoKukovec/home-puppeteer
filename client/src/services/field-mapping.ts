@@ -86,4 +86,5 @@ export const fieldMapping: IDictionary<IDictionary<IFieldMap>> = {
       },
     },
   },
+  tradfri_item: {},
 };
