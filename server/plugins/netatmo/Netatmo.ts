@@ -63,7 +63,7 @@ export class Netatmo extends Service {
     })
   }
 
-  private setWeatherData(itemData: {_id: string, dashboard_data: any}) {
+  private setWeatherData(itemData: { _id: string, dashboard_data: any }) {
     const item = this.items.find((i) => i.meta.id === itemData._id);
     const data = itemData.dashboard_data;
 
