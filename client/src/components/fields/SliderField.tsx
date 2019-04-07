@@ -47,13 +47,29 @@ export class SliderField extends React.Component<IFieldComponent & {
         opacity: 1;
 
         .bp3-slider-handle {
-          border: 1px solid white;
+          border: 1px solid #293742;
           background: transparent;
+          overflow: hidden;
+          border-radius: 50%;
+
+          &:before {
+            background-image: ${gradient};
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 20000%;
+            left: ${-item[fieldName] * 200}%;
+          }
         }
       }
 
       .bp3-slider-track {
-        background-image: ${gradient}
+        background-image: ${gradient};
+      }
+
+      .bp3-dark & .bp3-slider-progress {
+        background: transparent;
       }
     `;
 

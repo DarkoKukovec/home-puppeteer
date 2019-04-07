@@ -6,42 +6,21 @@ import { Service } from './Service';
 export class Item extends Model {
   public static type = 'item';
 
-  [key: string]: any;
-
-  public static preprocess(data: any) {
-    // console.log('item', data);
-
-    return {
-      ...data,
-      plugins: undefined,
-    };
-  }
-
-  // @prop
+  @prop
   public coordinates!: {
     x: number;
     y: number;
   };
 
-  // @prop.toOne(Room)
+  @prop.toOne(Room)
   public room!: Room;
 
-  // @prop
+  @prop
   public name!: string;
 
-  // @prop
+  @prop
   public disabled?: boolean;
 
+  @prop.toMany('service', 'items')
   public items?: Array<Service>;
-
-  constructor(...args: Array<any>) {
-    super(...args);
-    super['constructor'](...args);
-  }
 }
-
-prop(Item, 'coordinates');
-prop(Item, 'name');
-prop(Item, 'disabled');
-prop.toOne(Room)(Item, 'room');
-prop.toMany('service', 'items')(Item, 'plugins');

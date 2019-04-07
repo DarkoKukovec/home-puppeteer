@@ -2,6 +2,7 @@
 
 import { IDictionary } from '../interfaces/IDictionary';
 
+import { NumberField } from '../components/fields/NumberField';
 import { SliderField } from '../components/fields/SliderField';
 import { TextField } from '../components/fields/TextField';
 import { IFieldComponent } from '../interfaces/IFieldComponent';
@@ -20,6 +21,25 @@ export const fieldMapping: IDictionary<IDictionary<IFieldMap>> = {
         label: 'Temperature',
         formatter(fieldData: any) {
           return `${fieldData} °C`;
+        },
+      },
+    },
+    setpoint: {
+      component: NumberField,
+      props: {
+        label: 'Setpoint',
+        step: 0.5,
+        minValue: 12,
+        maxValue: 30,
+        decorator: '°C',
+      },
+    },
+    setpointMode: {
+      component: TextField,
+      props: {
+        label: 'Setpoint mode',
+        formatter(fieldData: any) {
+          return fieldData === 'program' ? 'Auto' : 'Custom';
         },
       },
     },
@@ -82,6 +102,15 @@ export const fieldMapping: IDictionary<IDictionary<IFieldMap>> = {
         label: 'Noise level',
         formatter(fieldData: any) {
           return `${fieldData} dB`;
+        },
+      },
+    },
+    battery: {
+      component: TextField,
+      props: {
+        label: 'Battery',
+        formatter(fieldData: any) {
+          return `${fieldData}%`;
         },
       },
     },

@@ -79,7 +79,7 @@ export class App extends React.Component<{
 
   public render() {
     return (
-      <div className={mainClass}>
+      <div className={cx(mainClass, 'bp3-dark')}>
         <h1 className={titleClass}>
           Home control
           {this.selectedPoi &&

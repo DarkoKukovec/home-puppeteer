@@ -29,5 +29,10 @@ const socket = io({
   transports: ['polling'],
 });
 
-socket.on('init', state.insert.bind(state));
+socket.on('init', (data: any) => {
+  state.insert(data);
+  state.onPatch((patch) => {
+    socket.emit('patch', patch);
+  });
+});
 socket.on('patch', state.applyPatch.bind(state));
